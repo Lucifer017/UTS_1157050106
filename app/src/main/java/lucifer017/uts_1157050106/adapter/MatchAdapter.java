@@ -13,32 +13,34 @@ import com.bumptech.glide.Glide;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import lucifer017.uts_1157050106.R;
-import lucifer017.uts_1157050106.activity.PertandinganActivity;
-import java.util.List;
-import lucifer017.uts_1157050106.model.Pertandingan;
+import lucifer017.uts_1157050106.activity.MatchActivity;
 
-public class PertandinganAdapter extends RecyclerView.Adapter<PertandinganAdapter.ViewHolder> {
+import java.util.List;
+
+import lucifer017.uts_1157050106.model.Match;
+
+public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> {
 
     private Context context;
-    private List<Pertandingan> listPertandingan;
+    private List<Match> listMatch;
 
-    public PertandinganAdapter(Context context, List<Pertandingan> listPertandingan) {
+    public MatchAdapter(Context context, List<Match> listMatch) {
         this.context = context;
-        this.listPertandingan = listPertandingan;
+        this.listMatch = listMatch;
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        final Pertandingan pertandingan = listPertandingan.get(position);
-        Glide.with(context).load(pertandingan.getLogoTimSatu()).into(holder.imageTimSatu);
-        Glide.with(context).load(pertandingan.getLogoTimDua()).into(holder.imageTimDua);
-        holder.txtTimSatu.setText(pertandingan.getNamaTimSatu());
-        holder.txtTimDua.setText(pertandingan.getNamaTimDua());
+        final Match match = listMatch.get(position);
+        Glide.with(context).load(match.getLogoTimSatu()).into(holder.imageTimSatu);
+        Glide.with(context).load(match.getLogoTimDua()).into(holder.imageTimDua);
+        holder.txtTimSatu.setText(match.getNamaTimSatu());
+        holder.txtTimDua.setText(match.getNamaTimDua());
         holder.cvPertandingan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, PertandinganActivity.class);
-                i.putExtra("pertandingan", pertandingan);
+                Intent i = new Intent(context, MatchActivity.class);
+                i.putExtra("match", match);
                 context.startActivity(i);
             }
         });
@@ -75,7 +77,7 @@ public class PertandinganAdapter extends RecyclerView.Adapter<PertandinganAdapte
 
     @Override
     public int getItemCount() {
-        return listPertandingan.size();
+        return listMatch.size();
     }
 
 

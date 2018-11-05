@@ -14,16 +14,17 @@ import lucifer017.uts_1157050106.R;
 import android.support.design.widget.NavigationView;
 import android.view.MenuItem;
 import lucifer017.uts_1157050106.fragment.HomeFragment;
-import lucifer017.uts_1157050106.fragment.PertandinganFragment;
+import lucifer017.uts_1157050106.fragment.MatchFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drw;
+    @BindView(R.id.nav_view)
+    NavigationView navView;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.drawer_layout)
-    DrawerLayout drawer;
-    @BindView(R.id.nav_view)
-    NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +35,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+                this, drw, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drw.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView.setNavigationItemSelectedListener(this);
+        navView.setNavigationItemSelectedListener(this);
         displaySelectedScreen(R.id.nav_home);
     }
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment = new HomeFragment();
                 break;
             case R.id.nav_pertandingan:
-                fragment = new PertandinganFragment();
+                fragment = new MatchFragment();
                 break;
             case R.id.nav_exit:
                 android.os.Process.killProcess(android.os.Process.myPid());
@@ -70,8 +71,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (drw.isDrawerOpen(GravityCompat.START)) {
+            drw.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }

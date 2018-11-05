@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import lucifer017.uts_1157050106.model.Pertandingan;
+import lucifer017.uts_1157050106.model.Match;
 import android.widget.ImageView;
 import butterknife.ButterKnife;
 import lucifer017.uts_1157050106.R;
 import android.widget.TextView;
 
-public class PertandinganActivity extends AppCompatActivity {
+public class MatchActivity extends AppCompatActivity {
 
     @BindView(R.id.logo_tim_satu)
     ImageView imageTimSatu;
@@ -29,7 +29,7 @@ public class PertandinganActivity extends AppCompatActivity {
     @BindView(R.id.txt_score_tim_dua)
     TextView txtScoreTimDua;
 
-    Pertandingan pertandingan;
+    Match match;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class PertandinganActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pertandingan);
         ButterKnife.bind(this);
 
-        pertandingan = (Pertandingan) getIntent().getSerializableExtra("pertandingan");
+        match = (Match) getIntent().getSerializableExtra("match");
 
         initToolbar();
         initUI();
@@ -45,16 +45,16 @@ public class PertandinganActivity extends AppCompatActivity {
 
     private void initToolbar() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Detail Pertandingan");
+        getSupportActionBar().setTitle("Detail Match");
     }
 
     private void initUI() {
-        Glide.with(this).load(pertandingan.getLogoTimSatu()).into(imageTimSatu);
-        Glide.with(this).load(pertandingan.getLogoTimDua()).into(imageTimDua);
-        txtTimSatu.setText(pertandingan.getNamaTimSatu());
-        txtTimDua.setText(pertandingan.getNamaTimDua());
-        txtScoreTimSatu.setText(pertandingan.getScoreTimSatu());
-        txtScoreTimDua.setText(pertandingan.getScoreTimDua());
+        Glide.with(this).load(match.getLogoTimSatu()).into(imageTimSatu);
+        Glide.with(this).load(match.getLogoTimDua()).into(imageTimDua);
+        txtTimSatu.setText(match.getNamaTimSatu());
+        txtTimDua.setText(match.getNamaTimDua());
+        txtScoreTimSatu.setText(match.getScoreTimSatu());
+        txtScoreTimDua.setText(match.getScoreTimDua());
     }
 
     @Override
@@ -78,7 +78,7 @@ public class PertandinganActivity extends AppCompatActivity {
             }
             case R.id.nav_news : {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(pertandingan.getLinkBerita()));
+                i.setData(Uri.parse(match.getLinkBerita()));
                 startActivity(i);
                 break;
             }
