@@ -44,24 +44,24 @@ public class PertandinganFragment extends Fragment {
     private void initTokoData() {
         listPertandingan.add(new Pertandingan(
                 "Cardiff", "https://upload.wikimedia.org/wikipedia/id/4/43/Cardiff_City_Crest_2012.svg.png", "0",
-                "Leicester", "https://upload.wikimedia.org/wikipedia/id/6/6c/Leicester_FC_Logo.svg", "1",
+                "Leicester", "https://preview.ibb.co/hexC3L/1200px-Leicester-City-crest-svg.png", "1",
+                "https://www.bbc.com/sport/football/46000538"));
+        listPertandingan.add(new Pertandingan(
+                "Arsenal", "http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4df.png", "1",
+                "Liverpool", "https://upload.wikimedia.org/wikipedia/hif/b/bd/Liverpool_FC.png", "1",
                 "https://www.bbc.com/sport/football/46086629"));
         listPertandingan.add(new Pertandingan(
-                "Arsenal", "https://upload.wikimedia.org/wikipedia/id/5/53/Arsenal_FC.svg", "1",
-                "Liverpool", "https://upload.wikimedia.org/wikipedia/id/0/0c/Liverpool_FC.svg", "1",
-                "https://sport.detik.com/sepakbola/liga-indonesia/4084710/persija-vs-persebaya-berakhir-1-1"));
+                "Wolves", "https://image.ibb.co/hpoMV0/Wolverhampton-Wanderers-FC.png", "2",
+                "Tottenham", "https://image.ibb.co/kGkUHf/580b57fcd9996e24bc43c4ee.png", "3",
+                "https://www.bbc.com/sport/football/46000540"));
         listPertandingan.add(new Pertandingan(
-                "Persib", "https://3.bp.blogspot.com/-gYhAsYqZdCo/WCcDjqzGE0I/AAAAAAAAYnQ/07-Njkhdnegk2uwLzGdDxdpqXt38obzmgCLcB/s1600/PERSIB-LOGO.png", "4",
-                "Persebaya", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/PERSEBAYA_SINCE_1927.png/222px-PERSEBAYA_SINCE_1927.png", "1",
-                "https://www.liputan6.com/bola/read/3672351/susunan-pemain-persib-bandung-vs-persebaya-surabaya"));
+                "Manchester City", "https://upload.wikimedia.org/wikipedia/sco/thumb/e/eb/Manchester_City_FC_badge.svg/410px-Manchester_City_FC_badge.svg.png", "6",
+                "Southampton", "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/FC_Southampton.svg/1200px-FC_Southampton.svg.png", "1",
+                "http://www.squawka.com/en/news/man-city-6-1-southampton-every-player-rated-as-raheem-sterling-and-co-smash-the-saints-for-six/1067134"));
         listPertandingan.add(new Pertandingan(
-                "PSM", "https://vignette.wikia.nocookie.net/logopedia/images/5/5d/PSM_Makassar_-new-.png/revision/latest/scale-to-width-down/418?cb=20180405141051", "2",
-                "Persib", "https://3.bp.blogspot.com/-gYhAsYqZdCo/WCcDjqzGE0I/AAAAAAAAYnQ/07-Njkhdnegk2uwLzGdDxdpqXt38obzmgCLcB/s1600/PERSIB-LOGO.png", "2",
-                "https://www.goal.com/id/pertandingan/psm-v-persib/mflu4gbtlvsl10pm2cze75nu"));
-        listPertandingan.add(new Pertandingan(
-                "Arema", "https://upload.wikimedia.org/wikipedia/th/f/fe/AremaMalang.png", "3",
-                "Persija", "https://upload.wikimedia.org/wikipedia/id/6/6d/Logo_Persija.png", "2",
-                "https://bola.kompas.com/read/2018/08/05/20572838/hasil-liga-1-arema-fc-vs-persija-imbang"));
+                "Chelsea", "http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4e1.png", "3",
+                "Crystal Palace", "https://upload.wikimedia.org/wikipedia/id/6/6d/Logo_Persija.png", "2",
+                "https://www.football.london/chelsea-fc/fixtures-results/kepa-chelsea-loftus-cheek-luiz-15372467"));
     }
 
     private void initRecyclerView() {
